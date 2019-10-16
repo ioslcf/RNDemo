@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>892536065646-eum2ihbo0ad5fnfj0jkprq6hfofvfucn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.892536065646-eum2ihbo0ad5fnfj0jkprq6hfofvfucn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD0UBVdXS_iAE-IXBw1zYEWzgXfF2Q_wkQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>892536065646</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.obencn.ccb-siri</string>
+	<key>PROJECT_ID</key>
+	<string>ccb-siri</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ccb-siri.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:892536065646:ios:198d572085d5018c</string>
+	<key>DATABASE_URL</key>
+	<string>https://ccb-siri.firebaseio.com</string>
+</dict>
+</plist>
