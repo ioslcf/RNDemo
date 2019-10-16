@@ -20,6 +20,7 @@
 		4B5411724EB20A0C2BE45592 /* libPods-RNDemo-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB85F0A328F096DAFA3C4806 /* libPods-RNDemo-tvOSTests.a */; };
 		DA65E68C2F41AF110CD4B5D7 /* libPods-RNDemo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC51E6AA9042314B0D8F89B /* libPods-RNDemo-tvOS.a */; };
 		F2AE0FB4E58F819D5DE5E9BF /* libPods-RNDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB4482C0E2F9B3CF8E2274D /* libPods-RNDemo.a */; };
+		F53664562356F5E000A513B1 /* ActionModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F53664552356F5E000A513B1 /* ActionModule.m */; };
 		F5AD57E62317DC40008D18AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5AD57E52317DC40008D18AC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		E5226C8E7BFEA53D9806D6DA /* Pods-RNDemo-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDemo-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RNDemo-tvOSTests/Pods-RNDemo-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F53664542356F5E000A513B1 /* ActionModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionModule.h; sourceTree = "<group>"; };
+		F53664552356F5E000A513B1 /* ActionModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionModule.m; sourceTree = "<group>"; };
 		F5AD57E52317DC40008D18AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "RNDemo/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +133,8 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				F53664542356F5E000A513B1 /* ActionModule.h */,
+				F53664552356F5E000A513B1 /* ActionModule.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				F5AD57E52317DC40008D18AC /* GoogleService-Info.plist */,
@@ -555,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F53664562356F5E000A513B1 /* ActionModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
