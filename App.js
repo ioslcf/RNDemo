@@ -14,6 +14,8 @@ import {
   View,
   Text,
   StatusBar,
+  Dimensions,
+  TouchableOpacity
 } from 'react-native';
 
 import {
@@ -24,28 +26,37 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { RNCamera } from 'react-native-camera'
+var window = Dimensions.get('window');
+export var screen_w = window.width; //屏幕宽度
+export var screen_h = window.height; //屏幕宽度
 
 const App = () => {
-  console.log('RNCamera.Constants.FaceDetection.Landmarks = ' + RNCamera.Constants.FaceDetection.Landmarks);
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <RNCamera
             ref={ref => { this.camera = ref; }}
-            style={{ width: 400, height: 400, overflow: "hidden" }}
-            type={'front'}
-            flashMode={'off'}
+            style={{ width: screen_w, height: screen_h, overflow: "hidden" }}
+            type={RNCamera.Constants.Type.front}
+            flashMode={RNCamera.Constants.FlashMode.auto}
+            captureAudio={false}
             autoFocus={true}
             zoom={0}
-            whiteBalance={'auto'}
-            ratio={1}
-            faceDetectionLandmarks={RNCamera.Constants.FaceDetection.Landmarks.none}
-            // onFacesDetected={this.onFacesDetected.bind(this)}
-            onFacesDetected={() => {}}
-            // onFaceDetectionError={this.onFaceDetectionError.bind(this)}
-            onFaceDetectionError={() => {}}
-            focusDepth={0}
+            focusDepth={0.5}
+            autoFocusPointOfInterest={{x: 0.5, y: 0.5}}
+            // type={'front'}
+            // flashMode={'off'}
+            // autoFocus={true}
+            // zoom={0}
+            // whiteBalance={'auto'}
+            // ratio={1}
+            // faceDetectionLandmarks={RNCamera.Constants.FaceDetection.Landmarks.none}
+            // // onFacesDetected={this.onFacesDetected.bind(this)}
+            // onFacesDetected={() => {}}
+            // // onFaceDetectionError={this.onFaceDetectionError.bind(this)}
+            // onFaceDetectionError={() => {}}
+            // focusDepth={0}
             androidCameraPermissionOptions={{
               title: '相机权限',
               message: '我们需要您授权让我们使用相机，方便人脸辨识',
@@ -58,48 +69,28 @@ const App = () => {
               buttonPositive: '授权',
               buttonNegative: '取消',
             }}>
-          <View style={[{ width: 400, height: 400, alignItems: 'center', justifyContent: 'flex-end' }]}>
-          </View>
+          <TouchableOpacity style={[{ position: 'absolute',left: 50,bottom: 50, width: 100, height: 50, backgroundColor: 'red', alignItems: 'center', justifyContent: 'flex-end' }]}
+          onPress={() => {
+            if (this.camera) {
+              let options = {
+                quality: 1.0,
+                width: 1080,
+                pauseAfterCapture: true,
+                forceUpOrientation: true,
+                fixOrientation: true,
+                mirrorImage: true
+              };
+
+              this.camera.takePictureAsync(options).then((data) => {
+                console.log('data.uri = ' + data.uri);
+              });
+            }
+          }}>
+            <Text>点我拍照</Text>
+          </TouchableOpacity>
 
         </RNCamera>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
+
       </SafeAreaView>
     </Fragment>
   );
