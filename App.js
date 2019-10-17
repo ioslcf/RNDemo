@@ -325,12 +325,12 @@ export default class CameraScreen extends React.Component {
         <Text style={{marginTop: 70,fontSize: 20}}>设置autoFocusPointOfInterest</Text>
         <View style={{marginTop: 10}}>
           <Text>设置InterestX 请输入小数0~1 不设置默认为0.5</Text>
-          <TextInput onChangeText={text => this.setState({ autoFocusPointX: text })} value={this.state.autoFocusPointX} style={{padding: 0,width: 150,height: 50,backgroundColor: 'white',borderRadius: 10,color: 'black'}}/>
+          <TextInput onChangeText={text => this.setState({ autoFocusPointX: Number(text) })} value={this.state.autoFocusPointX + ''} style={{padding: 0,width: 150,height: 50,backgroundColor: 'white',borderRadius: 10,color: 'black'}}/>
         </View>
 
         <View style={{marginTop: 10}}>
           <Text>设置InterestY 请输入小数0~1 不设置默认为0.5</Text>
-          <TextInput onChangeText={text => this.setState({ autoFocusPointY: text })} value={this.state.autoFocusPointY} style={{width: 150,height: 50,backgroundColor: 'white',borderRadius: 10,color: 'black'}}/>
+          <TextInput onChangeText={text => this.setState({ autoFocusPointY: Number(text) })} value={this.state.autoFocusPointY + ''} style={{width: 150,height: 50,backgroundColor: 'white',borderRadius: 10,color: 'black'}}/>
         </View>
 
         <TouchableOpacity style={[{ marginTop: 10, width: 120, height: 50, backgroundColor: 'red', alignItems: 'center', justifyContent: 'flex-end' }]}
